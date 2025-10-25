@@ -1,0 +1,12 @@
+import random
+import time
+def getRandomDate(startDate, endDate):
+    print("printing random date between: ", startDate,"and", endDate)
+    randomgenerator = random.random()
+    dateFormat = '%d/%m/%Y'
+    startTime = time.mktime(time.strptime(startDate, dateFormat))
+    endTime = time.mktime(time.strptime(endDate, dateFormat))
+    randomTime = startTime + randomgenerator*(endTime - startTime)
+    randomDate = time. strftime(dateFormat, time.localtime(randomTime))
+    return randomDate
+print("Random date = ", getRandomDate("1/2/2016", "12/12/2016"))
